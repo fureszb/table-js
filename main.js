@@ -1,36 +1,47 @@
 import { ADATLISTA } from "./adat.js";
-const kulcsLista = Object.keys(ADATLISTA[0]);
-
+import { kulcsLista } from "./adat.js";
 $(function () {
-  
-    osszallit(ADATLISTA);
-    const ELEM = $(".table");
-    let tartalom = osszeAllit();
-    ELEM.append(tartalom);
-});
+    adatMegjelenit(ADATLISTA)
 
-function osszallit(lista){
-    let txt = "<div class= `table-responsive`>";
-    txt += "<table class=`table table-stripped table-boarded table-hover`>";
-    txt += "<thead class=`table-dark`><tr>";
-    for(const key in kulcsLista) {
-        txt += `<th id='${key}' > ${kulcsLista[key]}  ⇅<th/>`;        
+    const NEVELEM = $("#nev");
+    NEVELEM = NEVELEM.event.target;
+    NEVELEM.on("click", ()=>{
+        rendezes(ADATLISTA, "nev")
+    })
+})
+
+function rendezes(lista, kulcs){
+    lista.sort(a,b, ()=>{
+        return a[kulcs].localeCompare(b[kulcs]);
+    })
+}
+
+function adatMegjelenit(lista) {
+    let txt = "<div class = 'table-responsive'>"
+    txt += "<table class= 'table table-bordered table-hover'>";
+    txt += "<thead class = 'table-primary'><tr>";
+    for (const key in kulcsLista){
+      txt += `<th id ='${key}'> ${kulcsLista[key]}</th>`; 
     }
-    txt += "<th></th></tr></thead>";
+    txt += "<th></th></tr></thead>"
     for (let index = 0; index < lista.length; index++) {
-        txt += "<tr>";
-        const object = lista[index];
-        for (const key in object) {
-            const element = object[key];
-            if (key === "nev") {
-                txt += `<th> ${element}</th>`;                
-            }
-            else{
-                txt += `<td> ${element}</td>`;
-            }
+      txt += '<tr>'
+      const object = lista[index];
+      for (const key in object){
+        const element = object[key]
+        if(key == nev){
+          txt += `<th> ${element} </th>`
+        } else {
+          txt += `<td> ${element} </td>`
         }
-        txt += '<td><button class="gomb torol" id="t${index}">✖</button></td></tr>';
+      }
+      txt += `<td><button id="${index}"> X </button></td>`;
+      txt += `</tr>`    
     }
-    txt += "</table></div>";
-    return txt;
-};
+    txt += '</table>'
+    txt += '</div>'
+    
+    let hely = $('article')
+    return hely.append(txt);
+  }
+  
