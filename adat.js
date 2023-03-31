@@ -1,12 +1,13 @@
-export const ADATLISTA = [
-    {nev: "Dézi", fajta:"keverék", kor:12},
-    {nev: "Bodri", fajta:"mudi", kor:2},
-    {nev: "Loki", fajta:"tacskó", kor:1},
-    {nev: "Zuri", fajta:"foxterrier", kor:5},
+export const ADATLISTA =[
+    {nev:"Dézi", fajta:"keverék", kor:12,lab:4},
+    {nev:"Bodri", fajta:"mudi", kor:4,lab:4},
+    {nev:"Loki", fajta:"keverék", kor:3,lab:4},
+    {nev:"Zuri", fajta:"foxterrier", kor:8,lab:4},
+    {nev:"Lappy", fajta:"Német Juhász", kor:4, lab:4}
 ]
-
 export const kulcsLista = {
     nev: "név",
+    fajta: "fajta",
     kor: "kor",
-    fajta: "fajta"
+    lab: "lábak száma"
 }
