@@ -11,3 +11,5 @@ export const kulcsLista = {
     kor: "kor",
     lab: "lábak száma"
 }
+
+export const KEPEKLINK = ["item 1", "item 2", "item 3"];
