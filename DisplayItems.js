@@ -6,13 +6,17 @@ function Display()
     var container = document.getElementById("publik");
     for(var i =0;i<ADATLISTA.length;i++)
     {
-        var row = `<div class="card m-1" style="width: 18rem;">
+        var row = `<div class="card m-1" id="gallery-images" style="width: 18rem;">
         <img class="card-img-top" src="./images/teszt.jpg" alt="Card image cap">
+        <div id="gallery-nav">
+        <button id="gallery-prev">Előző</button>
+        <button id="gallery-next">Következő</button>
+        </div>
         <div class="card-body">
         <h5 class="card-title">${ADATLISTA[i].nev}</h5>
         <p class="card-text">Fajta:${ADATLISTA[i].fajta}</p>
         <p class="card-text">Kor:${ADATLISTA[i].kor}</p>
-        <a href="#" class="btn btn-primary">Megvizsgál</a>
+        <a href="#" class="btn btn-primary megvizsgal">Megvizsgál</a>
         <button href="#" class="btn btn-primary" value="${i}" id="buy">Kosárba tesz</button>
       </div>
         </div>`

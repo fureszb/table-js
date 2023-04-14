@@ -53,17 +53,19 @@ ul li:hover{
     transform: scale(1.1);
     transition: 0.5s ease;
 }
-.col-md-8, .col-md-4{
+.col-md-7, .col-md-5{
     border: 1.5px solid black;
     border-radius: 10px 0px 0px 10px;
     padding: 10px;
-    text-align: center;
+
 
 }
-.col-md-4{
+.col-md-5{
     border-radius: 0px 10px 10px 0px;
+}
+.shop > .col-md-5{
     border-right: none;
 }
-.col-md-8{
+.shop > .col-md-7{
     border-left: none;
 }
