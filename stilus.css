@@ -3,9 +3,10 @@
 }
 
 main {
-    border: 1px solid rgb(102, 101, 101);
+    border: 2px solid rgb(102, 101, 101);
     max-width: 900px;
     margin: auto;
+    padding: 10px;
 }
 input{
     margin: 2px;
@@ -23,4 +24,46 @@ footer{
 }
 .deletetd:hover{
     color: black !important;
+    transform: scale(1.1);
+    transition: 0.5s ease;
+}
+.edit{
+    cursor: pointer;
+}
+.edit:hover{
+    color: black !important;
+    transform: scale(1.1);
+    transition: 0.5s ease;
+}
+ul li{
+    list-style: none;
+    border: 1.5px solid black;
+    width: 20%;
+    text-align: center;
+    padding: 5px;
+    margin: 30px 0px 10px 0px;
+    border-radius: 10px;
+}
+li a{
+    text-decoration: none;
+    color: black;
+}
+ul li:hover{
+    border: 1.5px solid blue;
+    transform: scale(1.1);
+    transition: 0.5s ease;
+}
+.col-md-8, .col-md-4{
+    border: 1.5px solid black;
+    border-radius: 10px 0px 0px 10px;
+    padding: 10px;
+    text-align: center;
+
+}
+.col-md-4{
+    border-radius: 0px 10px 10px 0px;
+    border-right: none;
+}
+.col-md-8{
+    border-left: none;
 }

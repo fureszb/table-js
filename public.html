@@ -16,23 +16,27 @@
 
 <body class="container">
     <main>
-        <header>
-            <h1>Webshop</h1>
+        <header class="row">
+            <h1 class="col-md-8">Webshop</h1>
+            <h1 class="col-md-4">Kosár</h1>
         </header>
         <nav>
             <ul>
                 <li><a href="index.html">Admin felület</a></li>
-                <li><a href="public.html">Public felület</a></li>
             </ul>
         </nav>
-        
-        <article id="publik" class="row p-2">
-       
-        </article>
-        <h1>Kosár</h1>
-        <article id="kosar" class="row p-2">
-       
-        </article>
+        <hr>
+        <div class="row">
+            <div class="col-md-7 p-2">
+              <article id="publik"></article>
+            </div>
+            <div class="col-md-5 p-2">
+              <aside>
+                <article id="kosar"></article>
+              </aside>
+            </div>
+          </div>
+        </main>
         <footer class="bg-dark text-center">
             Fűrész Bence
         </footer>
