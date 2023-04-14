@@ -1,34 +1,35 @@
+$(document).ready(function() {
+    $(".megvizsgal").on("click", function() {
+      let kepIndex = 0;
+      const $ARTICLE = $("galleria");
+      const LISTA = ["teszt.jpg", "teszt.jpg", "teszt.jpg", "teszt.jpg"];
 
-$('#megvizsgal').click(function() {
-        // Az aktuális kép indexének nyomon követése
-        var currentImageIndex = 0;
-    
-        // Az összes kép eltárolása egy tömbben
-        var images = $('#gallery-images img');
-    
-        // A gombokhoz tartozó click eseménykezelők
-        $('#gallery-prev').click(function() {
-            currentImageIndex--;
-            if (currentImageIndex < 0) {
-                currentImageIndex = images.length - 1;
-            }
-            showCurrentImage();
-        });
-    
-        $('#gallery-next').click(function() {
-            currentImageIndex++;
-            if (currentImageIndex >= images.length) {
-                currentImageIndex = 0;
-            }
-            showCurrentImage();
-        });
-    
-        // Az első kép megjelenítése
-        showCurrentImage();
-    
-        // Az aktuális kép megjelenítése
-        function showCurrentImage() {
-            images.hide();
-            images.eq(currentImageIndex).show();
+      // Kiíratjuk a képeket
+      for (let index = 0; index < LISTA.length; index++) {
+        $ARTICLE.append(`<div><img src="./images/${LISTA[index]}"></div>`);
+      }
+
+      // A "megvizsgal" gombra való kattintás esetén megjelenítjük a nagyító funkciókat
+      $(".lightbox").show();
+
+      // Beállítjuk a képgombok működését
+      $ARTICLE.find("div").on("click", function() {
+        kepIndex = $(this).index();
+        $(".nagykep").attr("src", `./images/${LISTA[kepIndex]}`);
+      });
+      $(".jobb").on("click", function() {
+        kepIndex++;
+        if (kepIndex > LISTA.length - 1) {
+          kepIndex = 0;
         }
+        $(".nagykep").attr("src", `./images/${LISTA[kepIndex]}`);
+      });
+      $(".bal").on("click", function() {
+        kepIndex--;
+        if (kepIndex < 0) {
+          kepIndex = LISTA.length - 1;
+        }
+        $(".nagykep").attr("src", `./images/${LISTA[kepIndex]}`);
+      });
     });
+  });

@@ -8,10 +8,6 @@ function Display()
     {
         var row = `<div class="card m-1" id="gallery-images" style="width: 18rem;">
         <img class="card-img-top" src="./images/teszt.jpg" alt="Card image cap">
-        <div id="gallery-nav">
-        <button id="gallery-prev">Előző</button>
-        <button id="gallery-next">Következő</button>
-        </div>
         <div class="card-body">
         <h5 class="card-title">${ADATLISTA[i].nev}</h5>
         <p class="card-text">Fajta:${ADATLISTA[i].fajta}</p>
@@ -40,13 +36,11 @@ function addCart(newrecord,id)
     var row = `<div class="card m-1" id="remove_${id}" style="width: 18rem;">
         <img class="card-img-top" src="./images/teszt.jpg" alt="Card image cap">
         <div class="card-body">
-      
         <h5 class="card-title">${newrecord.nev}</h5>
         <p class="card-text">Fajta:${newrecord.fajta}</p>
         <p class="card-text">Kor:${newrecord.kor}</p>
         <a class="btn btn-primary">Megvizsgál</a>
         <button  class="btn btn-primary" value="${id}" id="delete">X</button>
-        
       </div>
         </div>`
         container.innerHTML+=row;
