@@ -1,24 +1,45 @@
-function rendezesesKorszerint(lista, kulcs) {
-    lista.sort(function (a, b) {
-        return a[kulcs] - b[kulcs];
-    });
-}
+ export function rendez(lista2){
 
-function rendezesesNevszerint(lista, kulcs) {
-    lista.sort(function (a, b) {
-        let ertek = 1;
-        if (a[kulcs].toUpperCase() < b[kulcs].toUpperCase()) {
-            ertek = -1;
-        }
-        return ertek;
-    });
-}
+ 
+    $(document).on("click","table thead tr th",function(){
 
-export function rendezes(lista, kulcs) {
-    if (typeof lista[0][kulcs] == "number") {
-        rendezesesKorszerint(lista, kulcs);
-    } else {
-        rendezesesNevszerint(lista, kulcs);
+    console.log("he");
+    var tabletbody =   document.getElementById("elementBody");
+    var column = $(this).data('column');
+    var order = $(this).data('order');
+
+
+    if(order == 'desc')
+    {
+        $(this).data('order',"asc");
+        lista2 = lista2.sort((a,b)=>a[column] > b[column] ?  1 : -1)
+        ReOrderTBody(tabletbody,lista2);
+   
     }
+    else{
+        $(this).data('order',"desc");
+        lista2 = lista2.sort((a,b)=>a[column] < b[column] ? 1 : -1)
+        ReOrderTBody(tabletbody,lista2);
+    } 
+   
+    
+})
+}
+
+
+ function ReOrderTBody(TBodyName,arrayname)
+{
+    TBodyName.innerHTML='';
+    for(var i =0;i<arrayname.length;i++){
+        var row = `<tr>
+                        <td>${arrayname[i].nev}</td>
+                        <td>${arrayname[i].fajta}</td>
+                        <td>${arrayname[i].kor}</td>
+                        <td>${arrayname[i].lab}</td>
+                        <td class='text-danger deletetd' name="s"y>✘</td>
+                        <td  class='text-success edit'>modosit</td>
+                    </tr>`
+                    TBodyName.innerHTML+=row;
+     }
 }
 

@@ -17,3 +17,10 @@ footer{
     text-align: center;
     color: white;
 }
+
+.deletetd{
+    cursor: pointer;
+}
+.deletetd:hover{
+    color: black !important;
+}

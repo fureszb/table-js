@@ -11,31 +11,37 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
     <script src="main.js" type="module"></script>
     <link rel="stylesheet" href="stilus.css">
+ 
 </head>
 
-<body>
+<body>   
+
     <main>
         <header>
             <h1>Adatok listázása</h1>
-        </header>
-        <nav>
             <ul>
-                <li><a href="index.html">Admin felület</a></li>
+                
                 <li><a href="public.html">Public felület</a></li>
             </ul>
+        </header>
+        <nav>
+
         </nav>
         <section>
             <input type="text" id="nev" placeholder="név" name="nev">
             <input type="number" id="kor" placeholder="pl:>12..12>" name="kor">
             <input type="text" id="fajta" placeholder="fajta" name="fajta">
+            <input type="button" id="newrow" value="+"/>
         </section>
-        <article>
-            
+        <article id="tablazat">
+
         </article>
         <footer class="bg-dark text-center">
             Fűrész Bence
         </footer>
     </main>
+  
+
 </body>
 
 </html>
