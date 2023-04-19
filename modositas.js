@@ -43,6 +43,7 @@ export function EditItem(lista)
         var crow = table.rows[ $(this).closest("tr").index()];
        
         for (var i = 0; i < crow.childElementCount-2; i++) {
+           crow.cells[5].innerText="";
            
            nevinput.value = crow.cells[0].innerText;
            fajta.value = crow.cells[1].innerText;
@@ -52,7 +53,9 @@ export function EditItem(lista)
             crow.cells[1].append(fajta);
             crow.cells[2].append(kor);
             crow.cells[3].append(labszam);
-            crow.cells[4].append(mentes);
+            crow.cells[4].append();
+            crow.cells[5].append(mentes);
+        
             
         }
     
