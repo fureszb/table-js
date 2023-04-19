@@ -27,19 +27,19 @@
 }
 
 
-function ReOrderTBody(TBodyName,arrayname){
-    $(TBodyName).empty();
-    for(var i =0;i<arrayname.length;i++){
-        var row = `<tr>
-                        <td>${arrayname[i].nev}</td>
-                        <td>${arrayname[i].fajta}</td>
-                        <td>${arrayname[i].kor}</td>
-                        <td>${arrayname[i].lab}</td>
-                        <td class='text-danger deletetd' name="s"y>✘</td>
-                        <td  class='text-success edit'>modosit</td>
-                    </tr>`;
-        $(TBodyName).append(row);
-    }
+function ReOrderTBody(TBodyName, arrayname) {
+  $(TBodyName).empty();
+  for (var i = 0; i < arrayname.length; i++) {
+    var row = `<tr>
+      <td>${arrayname[i].nev}</td>
+      <td>${arrayname[i].fajta}</td>
+      <td>${arrayname[i].kor}</td>
+      <td>${arrayname[i].lab}</td>
+      <td class="text-danger deletetd" name="s">✘</td>
+      <td class="text-success"><button class="edit">modosit</button></td>
+    </tr>`;
+    $(TBodyName).append(row);
+  }
 }
 
 
