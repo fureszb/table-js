@@ -4,7 +4,7 @@ export  function kep()
 {
   
   $(document).ready(function() {
-    $("#megvizsgal").on("click", function() {
+    $(".megvizsgal").on("click", function() {
     
       let kepIndex = 0;
       const $ARTICLE = $(".galleria");
