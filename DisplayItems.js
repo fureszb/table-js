@@ -10,7 +10,7 @@ function Display() {
         <h5 class="card-title">${ADATLISTA[i].nev}</h5>
         <p class="card-text">Fajta:${ADATLISTA[i].fajta}</p>
         <p class="card-text">Kor:${ADATLISTA[i].kor}</p>
-        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" id="megvizsgal">Megvizsgál</button>
+        <button type="button" class="btn btn-primary megvizsgal" data-bs-toggle="modal" data-bs-target="#exampleModal" >Megvizsgál</button>
         <button href="#" class="btn btn-primary" value="${i}" id="buy">Kosárba tesz</button>
       </div>
     </div>`;
