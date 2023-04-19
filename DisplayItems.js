@@ -1,6 +1,6 @@
 
 import { ADATLISTA } from "./adat.js";
-
+import {kep} from "./gallery.js";
 function Display()
 {
     var container = document.getElementById("publik");
@@ -12,7 +12,7 @@ function Display()
         <h5 class="card-title">${ADATLISTA[i].nev}</h5>
         <p class="card-text">Fajta:${ADATLISTA[i].fajta}</p>
         <p class="card-text">Kor:${ADATLISTA[i].kor}</p>
-        <a href="#" class="btn btn-primary megvizsgal">Megvizsgál</a>
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" id="megvizsgal">Megvizsgál</button>
         <button href="#" class="btn btn-primary" value="${i}" id="buy">Kosárba tesz</button>
       </div>
         </div>`
@@ -21,7 +21,7 @@ function Display()
 }
 Display();
 
-$(".btn").click('#buy',function(){
+$(document).on('click','#buy',function(){
     var index = $(this).val();
 
     var newrecord = {nev:ADATLISTA[index].nev,fajta:ADATLISTA[index].fajta,kor:ADATLISTA[index].kor,lab:ADATLISTA[index].lab};
@@ -50,5 +50,5 @@ $(document).on('click', '#delete', function() {
     var index = $(this).val();
     document.getElementById("remove_"+index).remove();
    
-    console.log(index);
   });
+  kep();

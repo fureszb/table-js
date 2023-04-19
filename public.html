@@ -15,7 +15,34 @@
 </head>
 
 <body class="container">
-    <main>
+  
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Megtekintés</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="lightbox" style="display: none;">
+            <div class="lightbox-content">
+              <img class="nagykep" src="./images/teszt.jpg  ">
+              <div class="gombok">
+                <button class="bal">Előző</button>
+                <button class="jobb">Következő</button>
+              </div>
+            </div>
+          </div>
+          <article class="galleria"></article>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary bezar" data-bs-dismiss="modal">Bezárás</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+    <main class="main2">
         <header class="row">
             <h1 class="col-md-7">Webshop</h1>
             <h1 class="col-md-5">Kosár</h1>
@@ -29,15 +56,8 @@
         <div class="row shop justify-content-center">
             <div class="col-md-7 p-2">
               <article id="publik"></article>
-              <article class="galleria"></article>
-              <div class="lightbox" style="display: none;">
-                <div class="lightbox-content">
-                  <img class="nagykep" src="">
-                  <div class="gombok">
-                    <button class="bal">Előző</button>
-                    <button class="jobb">Következő</button>
-                  </div>
-                </div>
+              
+              
             </div>
             <div class="col-md-5 p-2">
               <aside>

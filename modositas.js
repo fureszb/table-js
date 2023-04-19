@@ -25,7 +25,7 @@ export function EditItem(lista)
     
     var mentes =  document.createElement("button");
     mentes.value="+";
-    mentes.innerHTML = '+';
+    mentes.innerHTML = 'mentés';
     mentes.onclick = function(){
        
     

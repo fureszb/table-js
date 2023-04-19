@@ -1,12 +1,18 @@
-$(document).ready(function() {
-    $(".megvizsgal").on("click", function() {
+
+export  function kep()
+
+{
+  
+  $(document).ready(function() {
+    $("#megvizsgal").on("click", function() {
+    
       let kepIndex = 0;
-      const $ARTICLE = $("galleria");
-      const LISTA = ["teszt.jpg", "teszt.jpg", "teszt.jpg", "teszt.jpg"];
+      const $ARTICLE = $(".galleria");
+      const LISTA = ["teszt.jpg", "gold-golden-retriever.jpeg", "teszt.jpg", "teszt.jpg"];
 
       // Kiíratjuk a képeket
       for (let index = 0; index < LISTA.length; index++) {
-        $ARTICLE.append(`<div><img src="./images/${LISTA[index]}"></div>`);
+        $ARTICLE.append(`<div><img class="auto" width="60px" height="60px" src="./images/${LISTA[index]}"></div>`);
       }
 
       // A "megvizsgal" gombra való kattintás esetén megjelenítjük a nagyító funkciókat
@@ -33,3 +39,5 @@ $(document).ready(function() {
       });
     });
   });
+}
+
