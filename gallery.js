@@ -11,9 +11,17 @@ export  function kep()
       const LISTA = ["teszt.jpg", "gold-golden-retriever.jpeg", "teszt.jpg", "teszt.jpg"];
 
       // Kiíratjuk a képeket
+      if($.trim($ARTICLE.html()) === '')
+      {
+        console.log(LISTA);
       for (let index = 0; index < LISTA.length; index++) {
         $ARTICLE.append(`<div><img class="auto" width="60px" height="60px" src="./images/${LISTA[index]}"></div>`);
       }
+    }
+    else
+    {
+   
+    }
 
       // A "megvizsgal" gombra való kattintás esetén megjelenítjük a nagyító funkciókat
       $(".lightbox").show();
